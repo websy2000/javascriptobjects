@@ -79,6 +79,7 @@
             console.log(person8);
             console.log(person9);
             console.log(person10);
+            
             //javascript object prototype..
             function Student(){
                 this.name = "sandy";
@@ -86,18 +87,17 @@
             }
             let student1 = new Student ();
             let student2 = new Student ();
-
             Student.prototype.age = "Male";
             console.log(student1);
             console.log(student2);
             //javascript getter..
+
             const student3 = {
              firstName:"sandeep",
              get getName (){
                 return this.firstName;
              }   
             };
-
             console.log(student3.firstName);
             console.log(student3.getName);
             //javascript setter Method..
@@ -123,7 +123,28 @@
                 }
             });
             console.log(student5.firstName);
+            //javascript prototype..
+            function Proto (){
+                this.name = "Mannu",
+                this.age = 22
+            }
+            const person11 = new Proto ();
+            const person12 = new Proto ();
+            
+            Proto.prototype.gender = "male";
+            console.log(Proto.prototype);
+            console.log(person11.age);
+            console.log(person12.age);
+            //javascript prototype Chaining...
+            function person13 (){
+                this.name = "anvith";
+            }
+            person13.prototype.name = "chinnu";
+            person13.prototype.age = 7;
 
+            const person14 = new person13 ();
+            console.log(person14.name);
+            console.log(person14.age);
         </script>
     </body>
 </html>
