@@ -4,6 +4,126 @@
         <title>Javascript Objects</title>
     </head>
     <body>
-        
+        <script>
+            //using dotted Object..
+            const person = {
+                name:"sandeep",
+                age:22
+            };
+            console.log(person.name);
+            console.log(person.age);
+            //using bracket notation..
+            const person1 = {
+                name:"sunny",
+                age:20
+            };
+            console.log(person1["name"]);
+            console.log(person1["age"]);     
+            //nested object
+            const person2 = {
+                name:"kadari",
+                age:18,
+                marks:{
+                    english:89,
+                    maths:66,
+                    social:95,
+                    science:52
+                }
+            };
+            console.log(person2);
+            console.log(person2.marks);
+            console.log(person2.marks.english);
+            //object Method..
+            const person3 = {
+                name:"yadav",
+                age:25,
+                greet: function() { console.log('Hello yadav') }
+            }      
+            person3.greet();
+            //accesing object methods..
+            const person4 = {
+                name:"sandy",
+                greet1 : function (){
+                    console.log("Hello Sandy");
+                }
+            }
+            console.log(person.name);
+            person4.greet1();
+            //javascript this key word..
+            const person5 = {
+                name:"Diary",
+                greet : function (){
+                    console.log(`The name is ${this.name}`)
+                }
+            }
+            person5.greet();
+
+            let person6 = {
+                name :"sandeep",
+                greet : function (){
+                    let surname = "kadari";
+                    console.log(`His name is ${this.name} ${surname}`);
+                }
+            }
+            person6.greet();
+            //javascript constructor..
+            function Person7 (first,last,age,gender,tel){
+                this.firstName = first,
+                this.lastName = last,
+                this.age = age,
+                this.mobile = tel
+            };
+            let person8 = new Person7 ("sunny","sandeep",22,"Male",9494928338);
+            let person9 = new Person7 ("gunti","anji",34,"Male",8897526656);
+            let person10 = new Person7("paka","paramesh",35,"Male",9618257773);
+            console.log(person8);
+            console.log(person9);
+            console.log(person10);
+            //javascript object prototype..
+            function Student(){
+                this.name = "sandy";
+                this.age = 25;
+            }
+            let student1 = new Student ();
+            let student2 = new Student ();
+
+            Student.prototype.age = "Male";
+            console.log(student1);
+            console.log(student2);
+            //javascript getter..
+            const student3 = {
+             firstName:"sandeep",
+             get getName (){
+                return this.firstName;
+             }   
+            };
+
+            console.log(student3.firstName);
+            console.log(student3.getName);
+            //javascript setter Method..
+            const student4 = {
+               firstName : "Anvith",
+               set changeName(newName){
+                this.firstName = newName;
+               }
+            };
+            console.log(student4.firstName);
+            //javascript object.defineProperty..
+            const student5 = {
+               firstName:"chinnu", 
+            }
+            Object.defineProperty(student5,"getName",{
+                get:function(){
+                    return this.firstName;
+                }
+            });
+            Object.defineProperty(student5,"changeName",{
+                set:function(value){
+                    this.firstName = value;
+                }
+            });
+            console.log(student5.firstName);
+
+        </script>
     </body>
 </html>
